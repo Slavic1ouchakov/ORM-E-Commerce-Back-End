@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
   Product.findByPk(req.params.id, {
-    include: [{ model: Category, T}]
+    include: [{ model: Category, Tag}]
 })
 .then((categories) => res.json(categories))
   .catch((err) => res.status(500).json(err))
